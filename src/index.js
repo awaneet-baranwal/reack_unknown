@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from "react-dom";
+// import CounterClass from './CounterClass'
+// import PrintMyNames from './PrintMyNames'
+// import './index.css';
 
+// function PrintName(){
+//     return <h1>This is from printName function</h1>
+// }
+import React, { useState } from "react";
+function CounterFn() {
+  const [count, setcount] = useState(0);
+  const increamentCounter = () => {
+    setcount(count + 1);
+  };
+  const decreamentCounter = () => {
+    setcount(count - 1);
+  };
+  return (
+    <>
+      <button onClick={increamentCounter}>+</button>
+      <p>{count}</p>
+      <button onClick={decreamentCounter}>-</button>
+    </>
+  );
+}
+//read bottom to top
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <>
+    <CounterFn />
+    {/* <CounterClass/> */}
+    {/* <PrintMyNames/> */}
+  </>,
+  document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
